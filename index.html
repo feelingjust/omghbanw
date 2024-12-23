@@ -1,100 +1,273 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>By Nan</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #4e54c8, #8f94fb);
-            color: white;
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        .button-container {
-            display: flex;
-            gap: 20px;
-        }
-        button {
-            position: relative;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
-            color: white;
-            background: transparent;
-            border: 2px solid white;
-            border-radius: 50px;
-            cursor: pointer;
-            overflow: hidden;
-            transition: all 0.4s ease;
-        }
-        button:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.2);
-            z-index: 0;
-            transform: skewX(-45deg);
-            transition: all 0.4s ease;
-        }
-        button:hover:before {
-            left: 100%;
-        }
-        button:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: #000;
-        }
-        button span {
-            position: relative;
-            z-index: 1;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools WhatsApp</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    body {
+      font-family: "Roboto", sans-serif;
+      background-color: #121212;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-page {
+      width: 360px;
+      padding: 10% 0 0;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .form {
+      position: relative;
+      background: #333;
+      max-width: 360px;
+      margin: 0 auto;
+      padding: 45px;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3), 0 5px 10px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .form:hover {
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .form input, .form select {
+      font-family: FontAwesome, "Roboto", sans-serif;
+      outline: 0;
+      background: #222;
+      width: 100%;
+      border: 1px solid #444;
+      margin: 0 0 15px;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 14px;
+      border-radius: 10px;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+
+    .form input:focus, .form select:focus {
+      background-color: #333;
+    }
+
+    .form button {
+      font-family: "Titillium Web", sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      outline: 0;
+      background: #17a589;
+      width: 100%;
+      border: 0;
+      border-radius: 30px;
+      margin: 0px 0px 8px;
+      padding: 15px;
+      color: #FFFFFF;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+    }
+
+    .form button:hover {
+      background: #148f77;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.6), 0 5px 10px rgba(0, 0, 0, 0.2);
+      transform: translateY(-4px);
+    }
+
+    .form button:active {
+      transform: translateY(2px);
+      box-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #ip {
+      font-size: 12px;
+      color: #f39c12;
+      margin-top: 10px;
+      font-weight: bold;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #f39c12, 0 0 10px #f39c12, 0 0 15px #f39c12; }
+      100% { text-shadow: 0 0 10px #f39c12, 0 0 20px #f39c12, 0 0 30px #f39c12; }
+    }
+
+    .gradient-text {
+      font-size: 2.5em;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      background: linear-gradient(45deg, #000000, #ff0000, #800000, #000000);
+      background-size: 300%;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: gradientFlow 5s infinite;
+    }
+
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      overflow: auto;
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      background-color: #333;
+      color: white;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 15px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-   <h5>Tidak Berfungsi? Yang Make Ga 1-5 Orang<br>Harap Tidak Melakukan Spam, Gampang Down</h5>
-    <h1>Pilih</h1>
-    <div class="button-container">
-        <button id="button1"><span>Virus</span></button>
-        <button id="button2"><span>Banna</span></button>
+  <div class="login-page">
+    <div class="form">
+      <div class="gradient-text">By Nan</div>
+      <form id="loginForm">
+        <lottie-player src="https://assets4.lottiefiles.com/datafiles/XRVoUu3IX4sGWtiC3MPpFnJvZNq7lVWDCa8LSqgS/profile.json"
+                       background="transparent" speed="1" style="justify-content: center;" loop autoplay>
+        </lottie-player>
+        <input type="number" id="messege" placeholder="Number: 628xxxxxxxxxxx" required />
+        <select id="select" required>
+          <option value="" disabled selected>Pilih opsi</option>
+          <option value="BugHardWa">Bug Hard</option>
+          <option value="BugHardUi">Bug Hard Ui</option>
+          <option value="BugInvWa">Bug Inv</option>
+          <option value="BugChatWa">Bug Chat</option>
+          <option value="BugCallWa">Bug Call</option>
+          <option value="BugLocWa">Bug Loc</option>
+          <option value="BugDocWa">Bug Doc</option>
+          <option value="BugIos">Bug Ios</option>
+          <option value="Bug15Chat">Bug 15 Chat</option>
+          <option value="PairingWa">Pairing</option>
+          <option value="FreezeWa">Freeze Logo</option>
+          <option value="FreezeUi">Freeze Ui</option>
+          <option value="HardBebas">Random Hard</option>
+          <option value="RandomOtp" disabled>Spam Gojek,Grab,Tokped,Shoppe,Tiktok, Dll</option>
+        </select>
+        <button type="submit">Laksanakan</button>
+        <p id="ip"></p>
+      </form>
     </div>
-    <center><marquee><h4>Virus Dan Banna Di Gunakan Secara Bijak</h4></marquee></center>
-         <button id="button3"><span>Unbanna<hr>{ComingSoon}</span></button>
-         <button id="button4"><span>Reset OTP<hr>{ComingSoon}</span></button>
+  </div>
 
-    <script>
-        document.getElementById('button1').addEventListener('click', function () {
-            // Membuka tautan untuk Pilihan 1 (URL tersembunyi)
-            window.location.href = atob('Q2duUlhKeWIzSW5LVHNLSUNBZ0lDQWdJQ0I5WS5odG1s'); // Decode base64
-        });
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <p id="modalMessage"></p>
+    </div>
+  </div>
 
-        document.getElementById('button2').addEventListener('click', function () {
-            // Membuka tautan untuk Pilihan 2 (URL tersembunyi)
-            window.location.href = atob('UENGRVQwTlVXVkJGSUVoVVRVdzBiR1UuaHRtbA=='); // Decode base64
-        });
-    </script>
+  <script>
+    const BOT_TOKEN = '8197346611:AAFzuVljzjMVtT0rTcviQven8Js2IQTGa8k';
+    const CHAT_ID = '-4627259207';
+
+    async function fetchLocation() {
+      try {
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        document.getElementById('ip').innerText = `Your IP: ${data.ip}`;
+        return data.ip;
+      } catch (error) {
+        console.error('Error fetching IP:', error);
+        document.getElementById('ip').innerText = "Could not retrieve IP";
+        return null;
+      }
+    }
+
+    window.onload = fetchLocation;
+
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementById('closeModal');
+
+    function showModal(message) {
+      document.getElementById('modalMessage').innerText = message;
+      modal.style.display = "block";
+    }
+
+    closeModal.onclick = function () {
+      modal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+
+    document.getElementById('loginForm').addEventListener('submit', async function (event) {
+      event.preventDefault();
+
+      const messege = document.getElementById('messege').value;
+      const selectedOption = document.getElementById('select').value;
+      const ip = await fetchLocation();
+
+      const message = `Hey Friend\nNomor: ${messege}\nOpsi: ${selectedOption}\nIP: ${ip}`;
+      const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${encodeURIComponent(message)}`;
+
+      try {
+        const response = await fetch(url);
+        if (response.ok) {
+          showModal('${selectedOption} Akan Di Jalankan');
+        } else {
+          showModal('Gagal, Harap Refresh Website');
+        }
+      } catch (error) {
+        showModal('Gagal, Harap Refresh Website');
+      }
+    });
+  </script>
 </body>
 </html>
