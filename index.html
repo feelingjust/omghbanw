@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src=
+  "https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com"
+  crossorigin="">
+  <link href=
+  "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Rock+Salt&amp;display=swap"
+  rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com"
+  crossorigin="">
+  <link href=
+  "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+  rel="stylesheet">
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <title>Website</title>
+  <style>
+                .swal2-title {
+      color: cyan; /* Warna hijau neon */
+      text-shadow: 0 0 10px cyan, 0 0 20px cyan, 0 0 30px cyan;
+    }
+
+    .swal2-html-container {
+      color: #f5f5f5; /* Warna teks terang */
+    }
+
+    .swal2-popup {
+      background-color: #1a1a1a; /* Latar belakang hitam */
+      border-radius: 10px;
+    }
+
+    .swal2-confirm {
+      background-color: cyan; /* Tombol neon hijau */
+      color: #1a1a1a; /* Warna teks tombol gelap */
+      border-radius: 5px;
+    }
+
+    .swal2-confirm:hover {
+      background-color: cyan; /* Efek hover tombol */
+    }
+        body {
+          overflow: hidden;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            min-height: 100vh;
+            position: relative;
+            padding-bottom: 50px; /* Space for the navbar */
+        }
+
+        .navbar {
+          border-radius: 20px;
+             border-top: 1px solid white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar li {
+            padding: 15px 20px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: black;
+            background-color: white;
+            transition: 0.3s;
+            border-radius: 5%;
+            padding: 10px;
+        }
+        p{
+          color: 
+          white;
+          font-size: 20px;
+          font-family: Sans-Serif;
+        }
+        .one{
+          
+          width: 80%;
+          height: 300px;
+          align-items: center;
+          justify-content: center;
+          padding-top: 30px;
+          box-shaow: 0 7px 15px 0 rgba(255,255,255,0.5);
+        }
+        img{
+          
+        }
+        .one img{
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          
+            box-shadow: 0 0 20px 10px rgba(0, 255, 255, 0.7);
+        }
+        h3{
+          color: cyan;
+        }
+         .pp {
+           
+            overflow: hidden;
+            border-right: .15em solid cyan; /* menambahkan kursor */
+            white-space: nowrap; /* mencegah teks membungkus ke baris berikutnya */
+            margin: 0 auto; /* memposisikan ke tengah */
+            letter-spacing: .15em; /* menambahkan jarak antar huruf */
+            animation: typing 5s steps( 18) infinite,
+                       blink-caret .75s step-end infinite;
+        }
+
+        /* efek mengetik */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 80% }
+        }
+
+        /* efek berkedip pada kursor */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            10% { border-color: cyan; }
+        }
+
+
+  @keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+  }
+  h2{
+  color: white;
+  }
+  .text{
+  font-size: 0.80em;
+  }
+  .silled{
+  transform: translateX(-100%);
+    animation: slideIn 1s forwards;
+  }
+  @keyframestesting{
+  from {
+    transform: translateX(-100%);
+  }
+  to{
+    transform: translateX(0%);
+  }
+  }
+  .content img{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+
+  }
+  .content{
+  display: flex;
+  width: 100%;
+  height: 30px;
+  justify-content: space-beetwen;
+  }
+  .logoo {
+  padding-left:20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logoo p {
+  font-size:0.8em;
+  font-family: "Rock Salt", cursive;
+  font-weight: 500;
+  font-style: normal;
+  padding-top: 20px;
+    margin: 0; /* Hapus margin default untuk memastikan alignment yang benar */
+  }
+
+  .lgoo img {
+  padding-top:25px ;
+  padding-right:10px ;
+    width: 30px;
+    height: 30px;
+  }
+  hr{
+  width: 50%;
+  margin-top: 150px;
+  color: white;
+  border-radius: 10%;
+
+  }
+  #text1{
+  font-size: 15px;
+  }
+  #particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div class="content">
+    <!-- Main content of the page goes here -->
+    <div class="logoo">
+      <p><i>Adnan_Intro</i></p>
+    </div>
+  </div>
+  <center>
+    <div class="one">
+      <img src="pp.webp">
+      <div class="pp">
+        <h3 style="color: white;">this is tools website</h3>
+      </div>
+      <div class="intro">
+        <p style="font-family: 'Dancing Script', cursive;">halo namaku</p>
+        <h2 class="silled"><i>ADNAN</i></h2>
+        <p class="text" style="font-family: 'Dancing Script', cursive;">Follow IG ><a href="https://instagram.com/NanAjahSih" style="color: white;">NanAjahSih</a><</p>
+      </div>
+      <hr color="" size="2">
+      <div id="text1"></div>
+    </div>
+  </center>
+  <nav class="navbar">
+    <ul>
+      <li>
+        <a href="tools.html">---Tools---</a>
+      </li>
+      <li>
+        <a href="help.html">---Help---</a>
+      </li>
+    </ul>
+  </nav><!-- scripts -->
+  <script src="https://cikal-portofolio.vercel.app/particles.js"></script> 
+  <script src="https://cikal-portofolio.vercel.app/js/app.js"></script> <!-- stats.js -->
+   
+  <script>
+
+          if (!localStorage.getItem('visited')) {
+      // Tampilkan SweetAlert2 pertama kali
+      Swal.fire({
+        title: 'Selamat Datang!',
+        text: 'Terima kasih Telah Mengunjungi Website Ini, Jangan Salah Gunakan Tools',
+        icon: 'info',
+        confirmButtonText: 'Lanjutkan',
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      });
+
+      // Tandai bahwa user sudah pernah masuk
+      localStorage.setItem('visited', 'true');
+      }
+      
+      const texts1 = [
+        "Holaaa",
+        "Welcome To My Tools Site",
+        "Enjoy Your Stay!",
+        "Dibuat Oleh Nan",
+        "Have a Great Day!",
+      ];
+      const colors = [
+        "#FF5733",
+        "#33FF57",
+        "#3357FF",
+        "#FF33A6",
+        "#A633FF",
+        "#FFC133",
+      ];
+
+      function getRandomText(textArray) {
+        return textArray[Math.floor(Math.random() * textArray.length)];
+      }
+
+      function getRandomColor() {
+        return colors[Math.floor(Math.random() * colors.length)];
+      }
+
+      function updateText() {
+        const text1 = document.getElementById("text1");
+        const text2 = document.getElementById("text2");
+
+        text1.innerText = getRandomText(texts1);
+        text1.style.color = getRandomColor();
+
+        text2.innerText = getRandomText(texts2);
+        text2.style.color = getRandomColor();
+      }
+      setInterval(updateText, 2000);
+      //ini untuk button itu ga harus butten sih 
+        document.getElementById("btnn").onclick = function() {
+            alert("maaf page ini masih dalam proses liris");
+        };
+        document.getElementById("btn").onclick = function() {
+            alert("maaf page ini masih dalam proses liris");
+        };
+        
+        document.getElementById("bun").onclick = function() {
+            alert("maaf page ini masih dalam tahap pengembangan");
+        };
+
+
+      
+  </script>
+</body>
+</html>
